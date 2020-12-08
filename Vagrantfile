@@ -10,3 +10,7 @@ Vagrant.configure("2") do |config|
 	
 	end
 end
+
+Vagrant.configure("2") do |config|
+  config.vm.provision "shell", path: "scriptV11.sh"
+end
