@@ -6,7 +6,8 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install apache2 php php-cli php-mysql libapache2-mod-php php-mbstring openssh-server net-tools unzip avahi-daemon -y
 sudo apt-get install -qq mariadb-server
 #bazome tin php
-sudo apt install phpmyadmin -y
+export DEBIAN_FRONTEND=noninteractive
+apt-get -yq install phpmyadmin
 sudo phpenmod mcrypt
 sudo phpenmod mbstring
 
