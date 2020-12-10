@@ -8,4 +8,5 @@ config.vm.provider "virtualbox" do |v|
   end
 
 config.vm.provision "shell", path: "scriptV11.sh"
+config.vm.provision "shell", path: "phpmyadmin.sh"
 end
