@@ -5,11 +5,7 @@ sudo apt update && sudo apt upgrade -y
 #bazome to apache to maria db kai to php
 sudo apt install apache2 php php-cli php-mysql libapache2-mod-php php-mbstring openssh-server net-tools unzip avahi-daemon -y
 sudo apt-get install -qq mariadb-server
-#bazome tin php
-export DEBIAN_FRONTEND=noninteractive
-apt-get -yq install phpmyadmin
-sudo phpenmod mcrypt
-sudo phpenmod mbstring
+
 
 #mizaroume to apache gia to boot
 sudo systemctl enable apache2
@@ -19,17 +15,12 @@ sudo systemctl start mariadb
 #kanoume restart ton apache coz why not
 sudo systemctl restart apache2
 
-
 #ftiaxnoume to firewall gia ton apache
 sudo ufw allow in "Apache Full"
 sudo ufw allow ssh 
 #dinome dikaiomata gia ton idioktiti
 sudo chmod -R 0755 /var/www/html/
 sudo echo "<?php phpinfo(); ?>" > /var/www/html/info.php
-
-
-#Mariadb Installation
-sudo mysql_secure_installation 
 
 #Nextcloud download
 sudo wget -c https://download.nextcloud.com/server/releases/nextcloud-18.0.0.zip
@@ -65,7 +56,4 @@ sudo a2enmod dir
 sudo a2enmod mime
 
 #hope it works
-sudo systemctl restart apache2 
-
-
-
+sudo systemctl restart apache2
